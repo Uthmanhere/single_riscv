@@ -1,2 +1,0 @@
-verilator -Wall --cc regfile.sv  --exe sim_main.cpp 
-make -j -C obj_dir -f Vregfile.mk Vregfile

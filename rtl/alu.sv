@@ -22,7 +22,7 @@ module alu (
 	);
 
 
-	assign zero = aluOut == 32'h00; //? 1'b1 : 1'b0;
+	assign zero = aluOut == 32'h00; 
 
 	always_comb
 	case(funct3)
@@ -37,10 +37,11 @@ module alu (
 		or_funct3	:	aluOut = r1 | r2;
 		and_funct3	:	aluOut = r1 & r2;
 		sl_funct3	:	aluOut = r1 << r2;
-		sr_funct3	:	case(funct7)
-							1'b0	:	aluOut = r1 >> r2;
-							1'b1	:	aluOut = r1 >>> r2;
-						endcase
+		sr_funct3	:	
+			case(funct7)
+				1'b0	:	aluOut = r1 >> r2;
+				1'b1	:	aluOut = r1 >>> r2;
+			endcase
 	endcase
 
 endmodule
