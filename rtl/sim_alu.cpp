@@ -22,22 +22,23 @@ int main(int argc, char ** argv)
 
 	alu = new Valu;
 
-//	alu->clk = 0;
 
 
 	for (int i = 0x00; i < 0x050; ++i)
 	{
 
-		alu->funct3 = 7;
+		alu->funct3 = rand() % 8;
+		alu->funct7 = rand() % 2;
 		alu->r1 = rand() % 100;
 		alu->r2 = rand() % 100;
 
 		
-//		alu->clk = !alu->clk;
 
 		
 		alu->eval();
-printf("funct3 [%3X] r1 %5X r2 %5X aluOut %5X zero %1d\n", alu->r1, alu->r2, alu->aluOut, alu->zero);
+
+	printf("funct3 [%3X] funct7 [%1X] r1 %5X r2 %5X aluOut %5X zero %1d overflow %1d\n", 
+			alu->funct3, alu->funct7, alu->r1, alu->r2, alu->aluOut, alu->zero, alu->overflow);
 		
 		main_time += 3;
 	}
