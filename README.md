@@ -10,7 +10,7 @@
 ### Prerequisites
 Compile open source verilator from source code as described in [verilator installation](https://www.veripool.org/projects/verilator/wiki/Installing) official page
 
-## Running Simulation
+### Running Simulation
 ```
 $ cd vsim
 $ ./compile.sh <module>
@@ -18,7 +18,7 @@ $ ./V<module>
 
 ```
 
-### Example
+#### Example
 ```
 $ cd vsim
 $ ./compile.sh alu
