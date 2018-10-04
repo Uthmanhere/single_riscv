@@ -1,1 +1,1 @@
-#Single Cycle RISC-V Microarchitecture
+# Single Cycle RISC-V Microarchitecture
