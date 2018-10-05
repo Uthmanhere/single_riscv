@@ -1,10 +1,8 @@
 #include <verilated.h>
-#include <iostream>
 #include <Vregfile.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-using namespace std;
 
 Vregfile * regfile;
 
