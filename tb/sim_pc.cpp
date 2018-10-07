@@ -28,7 +28,6 @@ int main(int argc, char ** argv)
 	for (int i = 49; i; --i)
 	{
 		pc->clk = !pc->clk;
-//		pc->rst = rand() % 2;
 		pc->eval();
 
 		printf("rst %1X inst_addr [%5X]\n", pc->rst, pc->inst_addr);
