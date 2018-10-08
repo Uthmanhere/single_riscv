@@ -9,7 +9,7 @@ module dataMem
 
 	reg [31:0] dataMem_regs[2**32];
 
-	assign dataOut = dataMem_regs[data_addr];
+	assign #2 dataOut = dataMem_regs[data_addr];
 
 	always @(posedge clk) begin
 		if (write_ctrl)

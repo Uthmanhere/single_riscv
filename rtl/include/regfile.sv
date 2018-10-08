@@ -15,7 +15,7 @@ module regfile
 	assign rs1 = regfile_regs[rs1_addr];
 	assign rs2 = regfile_regs[rs2_addr];
 
-	always_ff @(posedge clk) begin
+	always @(posedge clk) begin
 		if (write_ctrl)
 			regfile_regs[write_addr] <= write_data;
 	end

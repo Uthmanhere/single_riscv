@@ -11,8 +11,8 @@ parameter sr_funct3		=	3'b101;
 
 module alu (
 
-		input	[31:0]	op1,
-		input	[31:0]	op2,
+		input	[31:0]	r1,
+		input	[31:0]	r2,
 		input	[2:0]	funct3,
 		input			funct7,
 		output			zero,
@@ -28,18 +28,18 @@ module alu (
 		case(funct3)
 			add_funct3	:
 				case(funct7)
-					1'b0	:	{overflow, aluOut} = op1 + op2;
-					1'b1	:	{overflow, aluOut} = op1 - op2;
+					1'b0	:	{overflow, aluOut} = r1 + r2;
+					1'b1	:	{overflow, aluOut} = r1 - r2;
 				endcase
-			slt_funct3	:	aluOut = op1 < op2 ? 32'h0ff : 32'h000;
-			sltu_funct3	:	aluOut = op1 < op2 ? 32'h0ff : 32'h000;
-			or_funct3	:	aluOut = op1 | op2;
-			and_funct3	:	aluOut = op1 & op2;
-			sl_funct3	:	aluOut = op1 << op2;
+			slt_funct3	:	aluOut = r1 < r2 ? 32'h0ff : 32'h000;
+			sltu_funct3	:	aluOut = r1 < r2 ? 32'h0ff : 32'h000;
+			or_funct3	:	aluOut = r1 | r2;
+			and_funct3	:	aluOut = r1 & r2;
+			sl_funct3	:	aluOut = r1 << r2;
 			sr_funct3	:	
 				case(funct7)
-					1'b0	:	aluOut = op1 >> op2;
-					1'b1	:	aluOut = op1 >>> op2;
+					1'b0	:	aluOut = r1 >> r2;
+					1'b1	:	aluOut = r1 >>> r2;
 				endcase
 		endcase
 

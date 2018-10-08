@@ -29,16 +29,16 @@ int main(int argc, char ** argv)
 
 		alu->funct3 = rand() % 8;
 		alu->funct7 = rand() % 2;
-		alu->r1 = rand() % 100;
-		alu->r2 = rand() % 100;
+		alu->op1 = rand() % 100;
+		alu->op2 = rand() % 100;
 
 		
 
 		
 		alu->eval();
 
-	printf("funct3 [%3X] funct7 [%1X] r1 %5X r2 %5X aluOut %5X zero %1d overflow %1d\n", 
-			alu->funct3, alu->funct7, alu->r1, alu->r2, alu->aluOut, alu->zero, alu->overflow);
+	printf("funct3 [%3X] funct7 [%1X] op1 %5X op2 %5X aluOut %5X zero %1d overflow %1d\n", 
+			alu->funct3, alu->funct7, alu->op1, alu->op2, alu->aluOut, alu->zero, alu->overflow);
 		
 		main_time += 3;
 	}
